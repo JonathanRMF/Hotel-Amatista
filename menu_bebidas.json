@@ -25,7 +25,7 @@
         "descripcion":"Cóctel de base burbujeante con notas de lima fresca y romero aromático. Perfecto para abrir el apetito o acompañar platos ligeros con estilo."
     },
     {
-        "imagen":"/Imagenes/Gastronomia/margarita.jpg",
+        "imagen":"Imagenes/Gastronomia/margarita.jpg",
         "nombre":"Esencia de Azahar",
         "descripcion":"Una interpretación elegante de la clásica Margarita, donde el tequila se entrelaza con el licor de naranja y lima fresca, evocando la fragancia cítrica del azahar. Un cóctel que despierta los sentidos con frescura y sutileza."
     }
