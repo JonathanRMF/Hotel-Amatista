@@ -1,0 +1,412 @@
+:root {
+  --sb-principal: #371752;      /* Color del header de modal */
+  --texto-pagina: white;        /* Texto claro para contrastar */
+  --texto: #caa0d9;             /* Color de botones */
+  --btn-hover: #b288c3;         /* Hover de botones */
+  --btn-disabled: #ccc;         /* Botón desactivado */
+  --amatista-suave: #d5c4e0;
+  --amatista: #a883c7;
+  --amatista-oscuro: #7e5fa2;
+  --amatista-profundo: #5d3e7d;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: #f9f6fc;
+}
+
+header {
+  position: relative;
+  background-color: #371752;
+  height: 120px;
+}
+
+.logo {
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease;
+  top: 10px;
+}
+
+.logo:hover {
+  transform: translateX(-50%) scale(1.1); /* ← mantiene el centrado y agranda */
+}
+
+.logoUsuario{
+  width: 40px;
+  height: auto;
+}
+
+.booking-bar {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 20px;
+  background-color: #decfe7;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.booking-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.booking-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #3a2c4e;
+  margin-bottom: 5px;
+}
+
+#dateInput,
+#guestsSelect {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 250px;
+  background-color: #fff;
+  color: #555;
+}
+
+#dateInput {
+  cursor: not-allowed;
+  background-color: #eee;
+}
+
+#bookButton {
+  background-color: var(--sb-principal);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+#bookButton:hover {
+  background-color: var(--amatista-oscuro);
+  box-shadow: 0 4px 12px rgba(93, 62, 125, 0.4);
+  transform: scale(1.05);
+}
+
+.calendar-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  padding-bottom: 50px;
+}
+
+.flatpickr-calendar {
+  margin: 0 20px;
+  font-family: 'Playfair Display', serif;
+}
+
+.custom-dropdown {
+  position: relative;
+  width: 250px;
+}
+
+#guestsButton {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 6px;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f3e8fb;
+  border: 1px solid #b288c3;
+  border-radius: 8px;
+  margin-top: 5px;
+  padding: 15px;
+  z-index: 10;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.dropdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #3a2c4e;
+}
+
+.dropdown-row small {
+  font-size: 11px;
+  color: #6a5a7b;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.counter button {
+  background-color: #decfe7;
+  border: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#applyGuests {
+  background-color: #caa0d9;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#applyGuests:hover {
+  background-color: #b288c3;
+}
+
+/* Color amatista suave para el rango seleccionado */
+.flatpickr-day.inRange {
+  background: #decfe7 !important;  /* tono amatista suave */
+  color: #371752;                  /* texto en tono oscuro */
+  border-radius: 0;
+}
+
+/* Color más intenso para check-in y check-out */
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  background: #caa0d9 !important;
+  color: white;
+  border-radius: 50% !important;
+}
+
+.footer {
+  background-color: #decfe7;
+  color: #371752;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-family: 'Playfair Display', serif;
+  border-top: 1px solid #caa0d9;
+  text-align: center;
+}
+
+.footer-horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer a {
+  color: #371752;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.modal-content {
+  border: 2px solid var(--sb-principal);      /* Borde completo */
+  border-radius: 15px !important; /* Aplica en todas las esquinas */
+  overflow: hidden;               /* Asegura que el contenido no se desborde */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: var(--sb-principal);
+  color: var(--texto-pagina);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-radius: 0 !important; /* Elimina redondeo parcial que corta el borde */
+}
+
+.modal-body {
+  background-color: #f9f9f9;
+  padding: 25px;
+}
+
+.btn-field {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-field button {
+  position: absolute;
+  right: 30px;
+  flex: 1;
+  padding: 10px;
+  background-color: var(--texto);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-field button:hover {
+  background-color: var(--btn-hover);
+}
+
+.btn-field .disable {
+  background-color: var(--btn-disabled);
+}
+
+/* Estilo para los botones generales */
+.btn-formulario {
+  padding: 10px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--sb-principal);
+  box-shadow: 0 4px 12px var(--sb-principal);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  text-align: center;
+}
+
+.btn-formulario:hover {
+  background-color: var(--amatista-profundo);
+  box-shadow: 0 4px 12px rgba(93, 62, 125, 0.4);
+  transform: scale(1.05);
+}
+
+.btn-formulario:disabled,
+.btn-formulario.disable {
+  background-color: var(--btn-disabled);
+  cursor: not-allowed;
+}
+
+/* Estilo para los campos inválidos */
+.is-invalid {
+  border-color: red !important;
+}
+
+/* Estilo para el mensaje de error */
+.invalid-feedback {
+  display: block;
+  color: red;
+}
+
+/* Estilo para los campos válidos (si decides agregar validación positiva) */
+.is-valid {
+  border-color: green !important;
+}
+
+/* Mantiene el footer abajo en pantallas con poco contenido */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.enlace-registro {
+  color: #a678b4;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.enlace-registro:hover {
+  text-decoration: underline;
+  color: #8c5fa1;
+}
+
+#volverALogin {
+  color: #debae9;
+  font-size: 1.5rem;
+  border: none;
+  background: transparent;
+}
+
+#volverALogin:hover {
+  color: #ebddf1;
+}
+
+.btn-flecha {
+  background-color: #ffffff;         /* fondo blanco */
+  color: #7b4fa0;                    /* flecha amatista */
+  border: 2px solid #c6a4e6;         /* borde amatista */
+  border-radius: 8px;                /* esquinas suaves */
+  font-size: 1.3rem;
+  padding: 4px 12px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* sombra sutil */
+}
+
+.btn-flecha:hover {
+  background-color: #f8f2fc;         /* amatista muy claro al pasar */
+  border-color: #b388d3;
+  color: #5e3e82;
+  cursor: pointer;
+}
+
+#usuarioMenu {
+  position: absolute;
+  right: 20px;
+  top: 35px;
+}
+
+#menuUsuario {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--amatista-profundo);
+  border: 1px solid #bfa2d9;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+  border-radius: 6px;
+  width: 160px;
+  text-align: left;
+}
+
+.opcion-usuario {
+  padding: 10px 15px;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+}
+
+.opcion-usuario:hover {
+  background-color: var(--amatista-oscuro);
+}
+
+.d-none {
+  display: none !important;
+}
+
+.icono-usuario {
+  width: 40px;
+  height: auto;
+}

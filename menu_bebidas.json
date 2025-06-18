@@ -1,0 +1,32 @@
+[
+    {
+        "imagen":"/Imagenes/Gastronomia/Whiskey.jpg",
+        "nombre":"Whiskey",
+        "descripcion":"Selección de whiskey añejo, con notas ahumadas y final suave en paladar."
+    },
+    {
+        "imagen":"/Imagenes/Gastronomia/Vino.png",
+        "nombre":"Vino de Bodega",
+        "descripcion":"Exclusiva selección de vinos provenientes de prestigiosas bodegas de Mendoza, Argentina; reconocidos por su carácter intenso, elegancia en boca y expresión del terroir andino."
+    },
+    {
+        "imagen":"/Imagenes/Gastronomia/Coctel.jpg",
+        "nombre":"Coctel",
+        "descripcion":"Mezclas artesanales con licores premium y esencias naturales, servidas al gusto."
+    },
+    {
+        "imagen":"/Imagenes/Gastronomia/Gin.jpg",
+        "nombre":"Gin",
+        "descripcion":"Ginebra de autor infusionada con botánicos, ideal para un trago refrescante."
+    },
+    {
+        "imagen":"/Imagenes/Gastronomia/trago-con-romero.jpg",
+        "nombre":"Trago cítrico con romero",
+        "descripcion":"Cóctel de base burbujeante con notas de lima fresca y romero aromático. Perfecto para abrir el apetito o acompañar platos ligeros con estilo."
+    },
+    {
+        "imagen":"/Imagenes/Gastronomia/margarita.jpg",
+        "nombre":"Esencia de Azahar",
+        "descripcion":"Una interpretación elegante de la clásica Margarita, donde el tequila se entrelaza con el licor de naranja y lima fresca, evocando la fragancia cítrica del azahar. Un cóctel que despierta los sentidos con frescura y sutileza."
+    }
+]
