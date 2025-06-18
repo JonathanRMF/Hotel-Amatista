@@ -171,8 +171,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
       setTimeout(() => {
         mensajeExito.classList.add("d-none");
-        mostrarLogin(); // Muestra el modal de login
-      }, 3000);
+
+        // Cerrar modal de registro
+        const modalRegistro = document.getElementById("modalRegistro");
+        if (modalRegistro) {
+          modalRegistro.classList.remove("show");
+          modalRegistro.style.display = "none";
+          document.body.classList.remove("modal-open");
+          const backdrop = document.querySelector(".modal-backdrop");
+          if (backdrop) backdrop.remove();
+        }
+
+        // Limpiar y resetear formulario de registro
+        formRegistro.reset();
+        campos.forEach(({ id, feedback }) => {
+          const input = document.getElementById(id);
+          const feedbackDiv = document.getElementById(feedback);
+          input.classList.remove("is-invalid", "is-valid");
+          feedbackDiv.textContent = "";
+        });
+
+        // Limpiar formulario de login
+        const inputCorreo = document.getElementById("inputcorreo");
+        const inputContraseña = document.getElementById("inputcontraseña");
+        const emailFeedback = document.getElementById("emailFeedback");
+        const passwordFeedback = document.getElementById("passwordFeedback");
+
+        inputCorreo.value = "";
+        inputContraseña.value = "";
+        inputCorreo.classList.remove("is-invalid", "is-valid");
+        inputContraseña.classList.remove("is-invalid", "is-valid");
+        emailFeedback.textContent = "";
+        passwordFeedback.textContent = "";
+
+        // Mostrar modal de login
+        mostrarLogin();
+
+      }, 1000);
+
     }
   });
 
@@ -353,7 +389,14 @@ document.addEventListener("click", function (e) {
 
 function verificarYRedirigir() {
   if (!checkInDate || !checkOutDate) {
-    alert("Por favor, seleccione las fechas de su estancia antes de continuar.");
+    const mensaje = document.getElementById("mensajeFechas");
+    mensaje.classList.remove("d-none");
+
+    // Ocultar automáticamente luego de 3 segundos
+    setTimeout(() => {
+      mensaje.classList.add("d-none");
+    }, 3000);
+
     return false;
   }
 

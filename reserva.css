@@ -96,6 +96,23 @@ header {
   transform: scale(1.05);
 }
 
+.mensaje-fechas {
+  background-color: #a8282821; /* fondo amatista suave */
+  border: 1px solid #5c0000;
+  color: #992626;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  text-align: center;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.mensaje-fechas.d-none {
+  display: none;
+}
+
+
 .calendar-section {
   display: flex;
   justify-content: center;
