@@ -400,20 +400,27 @@ function verificarYRedirigir() {
     return false;
   }
 
-  // 1. Calcular número de semana ISO (1-52/53)
-  const numeroSemana = getISOWeeks(checkInDate);
+  // 1. Calcular número de semana ISO (1-52/53) para inicio y fin
+  const semanaInicio = getISOWeeks(checkInDate);
+  const semanaFin = getISOWeeks(checkOutDate);
   
   // 2. Calcular noches de estadía
   const diffTime = Math.abs(checkOutDate - checkInDate);
   const noches = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
   
-  // 3. Formato ISO de fecha (YYYY-MM-DD) como backup
-  const fechaISO = checkInDate.toISOString().split('T')[0];
+  // 3. Formatear fechas como YYYY-MM-DD
+  const formatDate = (date) => {
+    return date.toISOString().split('T')[0];
+  };
+  const fechaInicio = formatDate(checkInDate);
+  const fechaFin = formatDate(checkOutDate);
 
-  // Construir URL
+  // Construir URL con todos los parámetros
   const urlParams = new URLSearchParams({
-    semana: numeroSemana,    // Número de semana (prioridad)
-    fecha: fechaISO,         // Fecha ISO como alternativa
+    fechaInicio: fechaInicio,
+    fechaFin: fechaFin,
+    semanaInicio: semanaInicio,
+    semanaFin: semanaFin,
     noches: noches,
     habitaciones: rooms,
     adultos: adults,
@@ -423,7 +430,7 @@ function verificarYRedirigir() {
   window.location.href = `habitacion.html?${urlParams.toString()}`;
 }
 
-// Función para calcular semana ISO (1-52/53)
+// Función para calcular semana ISO (1-52/53) - se mantiene igual
 function getISOWeeks(date) {
   const target = new Date(date);
   const dayNr = (date.getDay() + 6) % 7; // Ajuste para que semana empiece en Lunes
