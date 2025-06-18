@@ -921,27 +921,6 @@ footer p.text-center {
     font-size: 0.8rem;
 }
 
-.habitacion-acciones {
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5rem 0;
-    border-top: 1px solid #eee;
-}
-
-.btn-detalles {
-    background-color: transparent;
-    border: 1px solid var(--sb-oscuro);
-    color: var(--sb-oscuro);
-    padding: 0.5rem 1.5rem;
-    border-radius: 4px;
-    font-weight: 500;
-}
-
-.btn-detalles:hover {
-    background-color: var(--sb-oscuro);
-    color: white;
-}
-
 .btn-reservar-minimal {
     background-color: var(--sb-oscuro);
     color: white;
@@ -954,39 +933,6 @@ footer p.text-center {
 .btn-reservar-minimal:hover {
     background-color: var(--sb-secundario);
     color: var(--sb-oscuro);
-}
-
-/* Galería de imágenes */
-.galeria-imagenes {
-    display: none;
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: var(--sb-principal);
-    border-radius: 8px;
-}
-
-.galeria-imagenes.active {
-    display: block;
-}
-
-.galeria-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.galeria-img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.galeria-img:hover {
-    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
@@ -1004,9 +950,5 @@ margin-bottom: 1rem;
     
     .amenidades-grid {
 grid-template-columns: 1fr;
-    }
-    
-    .galeria-grid {
-grid-template-columns: repeat(2, 1fr);
     }
 }
