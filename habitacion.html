@@ -29,48 +29,6 @@
     </div>
   </header>
 
-  <section class="booking-bar">
-    <div class="booking-field">
-      <label class="booking-label">FECHAS DE ESTANCIA</label>
-      <input type="text" id="dateInput" placeholder="Seleccionar fechas" readonly />
-    </div>
-
-    <div class="booking-field">
-      <label class="booking-label">HABITACIONES Y HUÉSPEDES</label>
-      <div class="custom-dropdown">
-        <button id="guestsButton">1 Habitación, 1 Huésped</button>
-        <div id="guestsDropdown" class="dropdown-content">
-          <div class="dropdown-row">
-            <span>N° DE HABITACIONES</span>
-            <div class="counter">
-              <button onclick="updateCounter('rooms', -1)">−</button>
-              <span id="roomsCount">1</span>
-              <button onclick="updateCounter('rooms', 1)">+</button>
-            </div>
-          </div>
-          <div class="dropdown-row">
-            <span>N° DE ADULTOS</span>
-            <div class="counter">
-              <button onclick="updateCounter('adults', -1)">−</button>
-              <span id="adultsCount">1</span>
-              <button onclick="updateCounter('adults', 1)">+</button>
-            </div>
-          </div>
-          <div class="dropdown-row">
-            <span>N° DE NIÑOS <small>(0 a 17 Años)</small></span>
-            <div class="counter">
-              <button onclick="updateCounter('children', -1)">−</button>
-              <span id="childrenCount">0</span>
-              <button onclick="updateCounter('children', 1)">+</button>
-            </div>
-          </div>
-          <button id="applyGuests">Aplicar</button>
-        </div>
-      </div>
-    </div>
-    <button id="busButton">Buscar</button>
-  </section>
-
    <!-- Modal de ingreso -->
   <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog">
