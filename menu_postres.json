@@ -1,31 +1,31 @@
 [
     {
-        "imagen":"/Imagenes/Gastronomia/tiramisu.jpg",
+        "imagen":"Imagenes/Gastronomia/tiramisu.jpg",
         "nombre":"Tiramisù della Casa",
         "descripcion":"Clásico italiano elaborado con capas de bizcocho savoiardi embebidas en café, crema de mascarpone y un toque de licor amaretto, finalizado con cacao amargo espolvoreado. Cremoso, intenso y delicadamente equilibrado."
     },
     {
-        "imagen":"/Imagenes/Gastronomia/brownie-de-chocolate.jpg",
+        "imagen":"Imagenes/Gastronomia/brownie-de-chocolate.jpg",
         "nombre":"Brownies de Chocolate",
         "descripcion":"Brownies caseros de chocolate oscuro, con interior fundente y toque de nuez."
     },
     {
-        "imagen":"/Imagenes/Gastronomia/helado.jpg",
+        "imagen":"Imagenes/Gastronomia/helado.jpg",
         "nombre":"Crema Helada Artesanal",
         "descripcion":"Cremosa selección de helados artesanales, elaborados con ingredientes naturales."
     },
     {
-        "imagen":"/Imagenes/Gastronomia/pastel.jpg",
+        "imagen":"Imagenes/Gastronomia/pastel.jpg",
         "nombre":"Tarta Delizia de Chocolate",
         "descripcion":"Bizcocho suave de vainilla relleno con crema de chocolate, cubierto con ganache brillante y decorado con fresas frescas y virutas de chocolate amargo."
     },
     {
-        "imagen":"/Imagenes/Gastronomia/tarta-de-fresas.jpg",
+        "imagen":"Imagenes/Gastronomia/tarta-de-fresas.jpg",
         "nombre":"Tarta de Fresas",
         "descripcion":"Base crujiente de masa fina con crema pastelera y fresas frescas glaseadas."
     },
     {
-        "imagen":"/Imagenes/Gastronomia/tarta-de-futos-rojos.jpg",
+        "imagen":"Imagenes/Gastronomia/tarta-de-futos-rojos.jpg",
         "nombre":"Tartelette de Frutos Rojos al Estilo Clásico",
         "descripcion":"Base de masa sablée dorada, rellena con crema de vainilla y cubierta con compota artesanal de frutos rojos glaseados. Un equilibrio perfecto entre dulzor y acidez, ideal para acompañar con té o espumante."
     }
