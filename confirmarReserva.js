@@ -567,7 +567,7 @@ async function guardarReserva() {
 
   await gracias();
     
-  window.location.href = 'https://jonathanrmf.github.io/Hotel-Amatista/'; 
+  window.location.href = 'https://jonathanrmf.github.io/Hotel-Amatista/reserva.html'; 
 
   return true;
 }
