@@ -198,3 +198,20 @@ toggle: false
 }
     });
 });
+
+document.getElementById('form-contacto').addEventListener('submit', function(e) {
+    e.preventDefault(); // Evita el envío real
+
+    const mensaje = document.getElementById('mensaje-exito');
+
+    // Mostrar mensaje
+    mensaje.classList.remove('d-none');
+
+    // Ocultar después de 4 segundos
+    setTimeout(() => {
+        mensaje.classList.add('d-none');
+    }, 4000);
+
+    // Limpiar formulario
+    this.reset();
+});

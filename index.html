@@ -24,7 +24,7 @@
                 <a class="nav-link" href="#inicio">Inicio</a>
                 <a class="nav-link" href="#proposito">Propósito</a>
                 <a class="nav-link" href="#servicios">Servicios</a>
-                <!--<a class="nav-link" href="#contacto">Contacoto</a>-->
+                <a class="nav-link" href="#contacto">Contacto</a>
                 <a class="nav-link reservar" href="reserva.html">Reservar</a>
             </nav>
         </div>
@@ -735,6 +735,40 @@
                     </div>
                 </section>
                 <section id="contacto">
+                <div class="formulario-contacto-full">
+                    <div class="container formulario-contacto py-5">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-md-10">
+                                <h2>Contacto</h2>
+                                <form id="form-contacto">
+                                    <div class="form-group mb-3">
+                                        <label for="nombre">Nombre</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="email">Correo electrónico</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="correo@ejemplo.com" required>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label for="mensaje">Mensaje</label>
+                                        <textarea class="form-control" id="mensaje" name="mensaje" rows="4" placeholder="Tu mensaje aquí..." required></textarea>
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary">Enviar</button>
+                                    </div>
+                                </form>
+
+                                <!-- Mensaje de éxito -->
+                                <div id="mensaje-exito" class="alert alert-custom-amatista mt-4 text-center d-none">
+                                    ¡Gracias por contactarnos! Te responderemos pronto.
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
                     <div class="container-fluid text-center" id="seccion-decorativa">
                         <div class="row">
                             <div class="col-lg-12 col-md-12">
@@ -748,6 +782,8 @@
                         </div>
                     </div>
                 </section>
+
+
             </div>
 
             <!-- Footer -->
@@ -783,7 +819,13 @@
                     <ul class="list-unstyled">
                     <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> San Luis, Argentina</li>
                     <li class="mb-2"><i class="fas fa-phone me-2"></i> +54 9 2942 222-2222</li>
-                    <li class="mb-2"><i class="fas fa-envelope me-2"></i> hotelamatista@gmail.com</li>
+                            
+                    <li class="mb-2">
+                        <i class="fas fa-envelope me-2"></i>
+                        <a href="#contacto" id="footer-contacto" class="text-decoration-none">Formulario de Contacto</a>
+                    </li>
+
+                    
                     <li class="mb-2"><i class="fas fa-clock me-2"></i> Atención 24/7</li>
                     </ul>
                 </div>

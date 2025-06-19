@@ -986,3 +986,143 @@ margin-bottom: 1rem;
 grid-template-columns: 1fr;
     }
 }
+
+/* Contenedor con fondo de imagen solo para el formulario */
+#contacto .formulario-contacto {
+    background: linear-gradient(#fefaff, #fefaff),
+                url('https://images.unsplash.com/photo-1618005198919-d3d4b77fdd5c?auto=format&fit=crop&w=1280&q=80');
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    margin-bottom: 60px;
+}
+
+/* Título */
+#contacto .formulario-contacto h2 {
+    color: #4b2563;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Campos */
+#contacto .formulario-contacto .form-control {
+    background-color: #edd1ff;
+    border: 1px solid #e4c8f5;
+    color: var(--sb-extendido);
+    border-radius: 6px;
+}
+
+#contacto .formulario-contacto .form-control::placeholder {
+    color: #000000a8;
+}
+
+#contacto .formulario-contacto label {
+    color: #4b2563;
+    font-weight: 500;
+}
+
+/* Botón */
+#contacto .formulario-contacto .btn-primary {
+    background-color: #4b2563;
+    border: none;
+    padding: 12px 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#contacto .formulario-contacto .btn-primary:hover {
+    background-color: #765796;
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(169, 112, 226, 0.6);
+}
+
+/* Fondo de pantalla completa */
+.formulario-contacto-full {
+    width: 100%;
+    background: linear-gradient(rgba(47, 34, 64, 0.85), rgba(47, 34, 64, 0.85)),
+                url('https://images.unsplash.com/photo-1618005198919-d3d4b77fdd5c?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Contenedor del formulario centrado */
+.formulario-contacto {
+    color: #f5e6ff;
+}
+
+/* Título */
+.formulario-contacto h2 {
+    color: #e6d6ff;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Campos */
+.formulario-contacto .form-control {
+    background-color: #3f2b56;
+    border: 1px solid #8c6bb1;
+    color: #fff;
+    border-radius: 6px;
+}
+
+.formulario-contacto .form-control::placeholder {
+    color: #c9b0e2;
+}
+
+.formulario-contacto label {
+    color: #d9c2f0;
+    font-weight: 500;
+}
+
+/* Botón */
+.formulario-contacto .btn-primary {
+    background-color: #8a4dc3;
+    border: none;
+    padding: 12px 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #fff;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.formulario-contacto .btn-primary:hover {
+    background-color: #a970e2;
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px rgba(169, 112, 226, 0.6);
+}
+
+.alert-custom-amatista {
+    background-color: #7a4dad;
+    color: #f3eaff;
+    border: 1px solid #a678d1;
+    border-radius: 10px;
+    padding: 16px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 0 15px rgba(122, 77, 173, 0.4);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.d-none {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
