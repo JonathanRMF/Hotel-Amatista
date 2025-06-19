@@ -116,7 +116,7 @@
     "nombre": "Cuadruple",
     "descripcion": "Habitación económica equipada con lo esencial para grupos o familias. Cuenta con camas individuales, baño privado y conexión WiFi.",
     "precio": 6200,
-    "imagen": ".Imagenes/Hotel/Cuadruple.jpeg",
+    "imagen": "Imagenes/Hotel/Cuadruple.jpeg",
     "capacidad": 8,
     "apta_niños": true,
     "servicios": ["Escritorio", "WiFi", "Baño privado", "TV", "Aire acondicionado"],
