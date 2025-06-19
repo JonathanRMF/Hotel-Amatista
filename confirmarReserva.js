@@ -479,7 +479,7 @@ async function cancelarReserva(reservaId) {
 }
 
 // Función para validar y guardar la reserva
-function guardarReserva() {
+async function guardarReserva() {
   // Obtener elementos del formulario
   const nombreInput = document.getElementById("Nombre");
   const apellidoInput = document.getElementById("Apellido");
@@ -565,6 +565,8 @@ function guardarReserva() {
   // Guardar en localStorage
   localStorage.setItem('reservas', JSON.stringify(reservasExistentes));
 
+  await gracias();
+    
   window.location.href = 'https://jonathanrmf.github.io/Hotel-Amatista/'; 
 
   return true;
@@ -580,3 +582,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+//Hagradecimiento por la recerba
+async function gracias() {
+  const result = await Swal.fire({
+    title: '¡Reserva Confirmada!',
+    text: 'Se realizó la reserva con éxito. Lo esperamos pronto.',
+    icon: 'success',  // Cambiado a 'success' ya que es una confirmación positiva
+    confirmButtonColor: '#3085d6',  // Azul que es más común para acciones positivas
+    confirmButtonText: 'Aceptar',
+    allowOutsideClick: false,  // Evita que el usuario cierre haciendo clic fuera
+    allowEscapeKey: false,  // Evita que el usuario cierre con ESC
+    allowEnterKey: true,
+    focusConfirm: true
+  });
+
+  // El código que sigue se ejecutará solo después de que el usuario haga clic en Aceptar
+  return result.isConfirmed;
+}
