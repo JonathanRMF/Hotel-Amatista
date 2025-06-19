@@ -413,7 +413,7 @@ function confirmarReserva() {
       }
     }
     
-    window.location.href = `confirmacion.html?${params.toString()}`;
+    window.location.href = `confirmar.html?${params.toString()}`;
   });
 }
 
