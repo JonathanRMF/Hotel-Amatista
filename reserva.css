@@ -427,3 +427,22 @@ main {
   width: 40px;
   height: auto;
 }
+
+/*oculta el texto del nombre en móviles*/
+@media (max-width: 768px) {
+  #btnSesion span {
+    display: none; /* Oculta el texto en móviles */
+  }
+
+  .logoUsuario {
+    width: 32px;
+    height: 32px;
+  }
+
+  #btnSesion {
+    padding: 5px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}

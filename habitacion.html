@@ -20,10 +20,10 @@
     <div id="usuarioMenu">
       <button id="btnSesion" class="btn-formulario" data-bs-toggle="modal" data-bs-target="#modalLogin">
         <img src="Imagenes/Logos/logousuario.png" alt="usuario" class="logoUsuario">
-        Iniciar Sesión
+        <span id="nombreUsuarioHeader">Iniciar Sesión</span>
       </button>
       <div id="menuUsuario" class="dropdown-usuario d-none">
-        <div class="opcion-usuario" id="misReservas">📋 Mis reservas</div>
+        <div class="opcion-usuario" id="misReservas">📋 Mis reservass</div>
         <div class="opcion-usuario" id="cerrarSesion">🚪 Cerrar sesión</div>
       </div>
     </div>
@@ -331,6 +331,41 @@
         </div>
       <div id="contenedor-habitaciones" class="row row-cols-1 row-cols-md-1 g-3"></div>
     </div>
+
+    <!-- Sección de resumen de reserva -->
+    <section id="resumen-reserva" class="resumen-reserva fixed-bottom bg-white shadow-lg d-none">
+      <div class="container py-3">
+        <div class="row align-items-center">
+          <div class="col-md-4">
+            <h5 class="mb-1">Tu selección</h5>
+            <div class="d-flex text-muted small">
+              <span id="resumen-fechas"></span>
+              <span class="mx-2">•</span>
+              <span id="resumen-noches"></span>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="d-flex">
+              <div class="me-3" id="alerta">
+                <small class="text-muted d-block">Habitaciones</small>
+                <span id="resumen-habitaciones">1</span>
+              </div>
+              <div>
+                <small class="text-muted d-block">Huéspedes</small>
+                <span id="resumen-huespedes"></span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 text-end">
+            <h5 class="text-primary mb-0" id="resumen-total">$0</h5>
+          </div>
+          <div class="col-md-2 text-end">
+            <button id="btn-confirmar-reserva" class="btn btn-primary w-100">Reservar</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 </div>
 

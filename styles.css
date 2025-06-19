@@ -42,6 +42,30 @@ body {
   width: 160px;
 }
 
+/* Sidebar hamburguesa: responsive movil y pantalla chica */
+.sidebar-hamburguesa {
+  position: fixed;
+  top: 0;
+  height: 100dvh;
+  left: 0;
+  width: 60px;
+  background-color: var(--sb-principal);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  z-index: 250;
+  padding-top: 10px; /* espacio desde arriba */
+  transition: left 1s ease;
+}
+
+/* Botón hamburguesa dentro */
+.btn-hamburguesa {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--texto);
+  cursor: pointer;
+}
 
 /* Sidebar principal */
 .sidebar {
@@ -933,6 +957,16 @@ footer p.text-center {
 .btn-reservar-minimal:hover {
     background-color: var(--sb-secundario);
     color: var(--sb-oscuro);
+}
+
+@media (max-width: 768px) {
+  #sidebar {
+    display: none !important; /* Oculta el sidebar clásico */
+  }
+
+  #sidebar-hamburguesa {
+    display: flex !important; /* Muestra el nuevo sidebar en móvil */
+  }
 }
 
 @media (max-width: 768px) {

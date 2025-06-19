@@ -713,3 +713,38 @@ body {
   width: 40px;
   height: auto;
 }
+
+/* Estilos para el resumen de reserva */
+.resumen-reserva {
+  border-top: 1px solid #dee2e6;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+#btn-confirmar-reserva {
+  white-space: nowrap;
+}
+
+/* Ajuste para no tapar contenido */
+.main-content {
+  padding-bottom: 80px;
+}
+
+/*oculta el texto del nombre en móviles*/
+@media (max-width: 768px) {
+  #btnSesion span {
+    display: none; /* Oculta el texto en móviles */
+  }
+
+  .logoUsuario {
+    width: 32px;
+    height: 32px;
+  }
+
+  #btnSesion {
+    padding: 5px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}

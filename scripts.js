@@ -1,10 +1,11 @@
 const sidebarExtendido = document.getElementById("sidebar-extendido");
 const mainSidebar = document.getElementById("sidebar");
-
+const sidebarHamburguesa = document.getElementById("sidebar-hamburguesa");
 
 function mostrarMenu() {
   sidebarExtendido.classList.add("visible");
   mainSidebar.classList.add("oculto");
+  sidebarHamburguesa.classList.add("oculto");
 }
 
 

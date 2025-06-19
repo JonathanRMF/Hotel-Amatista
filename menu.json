@@ -1,31 +1,31 @@
 [
     {
-        "imagen":"Imagenes/Gastronomia/calabacin-relleno.jpg",
+        "imagen":"/Imagenes/Gastronomia/calabacin-relleno.jpg",
         "nombre":"Calabacin Relleno",
         "descripcion":"Delicado calabacín horneado, relleno de vegetales salteados y queso gratinado."
     },
     {
-        "imagen":"Imagenes/Gastronomia/filete-la-parrilla.jpg",
+        "imagen":"/Imagenes/Gastronomia/filete-la-parrilla.jpg",
         "nombre":"Filete la Parrilla",
         "descripcion":"Jugoso corte de res a la parrilla, sazonado con finas hierbas y cocción al punto."
     },
     {
-        "imagen":"Imagenes/Gastronomia/goulash.jpg",
+        "imagen":"/Imagenes/Gastronomia/goulash.jpg",
         "nombre":"Goulash",
         "descripcion":"Estofado húngaro de carne tierna en salsa de paprika, servido con pan artesanal."
     },
     {
-        "imagen":"Imagenes/Gastronomia/lasana-con-bolonesa.jpg",
+        "imagen":"/Imagenes/Gastronomia/lasana-con-bolonesa.jpg",
         "nombre":"Lasana con Bolonesa",
         "descripcion":"Capas de pasta fresca con ragú de carne y bechamel, gratinadas con queso parmesano."
     },
     {
-        "imagen":"Imagenes/Gastronomia/hamburguesa.jpg",
+        "imagen":"/Imagenes/Gastronomia/hamburguesa.jpg",
         "nombre":"Burger Royale con Papas Rústicas",
         "descripcion":"Hamburguesa de bife angus a la parrilla, con queso maduro fundido, panceta crocante, cebolla crujiente y vegetales frescos, servida en pan brioche dorado. Acompañada de papas fritas rústicas."
     },
     {
-        "imagen":"Imagenes/Gastronomia/ñoquis.jpg",
+        "imagen":"/Imagenes/Gastronomia/ñoquis.jpg",
         "nombre":"Ñoquis al Parmigiano con Nueces Tostadas",
         "descripcion":"Ñoquis artesanales de papa en crema suave de queso parmesano y espinacas frescas, coronados con nueces tostadas y escamas de grana padano."
     }

@@ -329,10 +329,12 @@ function mostrarUsuarioLogueado() {
 
     btnSesion.innerHTML = `
       <img src="Imagenes/Logos/logousuario.png" class="icono-usuario">
-      ${nombre}
+      <span id="nombreUsuarioHeader">${nombre}</span>
     `;
+    
     btnSesion.removeAttribute("data-bs-toggle");
     btnSesion.removeAttribute("data-bs-target");
+
     menuUsuario.classList.add("d-none");
   }
 }
