@@ -565,7 +565,7 @@ function guardarReserva() {
   // Guardar en localStorage
   localStorage.setItem('reservas', JSON.stringify(reservasExistentes));
 
-  window.location.href = 'reserva.html'; 
+  window.location.href = 'https://jonathanrmf.github.io/Hotel-Amatista/'; 
 
   return true;
 }
