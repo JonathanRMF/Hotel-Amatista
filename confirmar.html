@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hotel Amatista - Reservas</title>
+  <meta charset="UTF-8">
+  <title>Hotel - Confirmar reserva</title>
   <link rel="icon" href="Imagenes/Logos/logo.png" type="image/png">
-
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <link rel="stylesheet" href="reserva.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="habitacion.css">
+  <link rel="stylesheet" href="confirmacion.css">
 </head>
-<body>
-  <div class="page-container">
-
+<body class="d-flex flex-column min-vh-100">
   <header>
     <a href="index.html">
       <img src="Imagenes/Logos/logo2.png" alt="Hotel Amatista" class="logo">
@@ -35,58 +28,6 @@
     </div>
   </header>
 
-  <main>
-
-  <section class="booking-bar">
-    <div class="booking-field">
-      <label class="booking-label">FECHAS DE ESTANCIA</label>
-      <input type="text" id="dateInput" placeholder="Seleccionar fechas" readonly />
-    </div>
-
-    <div class="booking-field">
-      <label class="booking-label">HABITACIONES Y HUÉSPEDES</label>
-      <div class="custom-dropdown">
-        <button id="guestsButton">1 Habitación, 1 Huésped</button>
-        <div id="guestsDropdown" class="dropdown-content">
-          <div class="dropdown-row">
-            <span>N° DE HABITACIONES</span>
-            <div class="counter">
-              <button onclick="updateCounter('rooms', -1)">−</button>
-              <span id="roomsCount">1</span>
-              <button onclick="updateCounter('rooms', 1)">+</button>
-            </div>
-          </div>
-          <div class="dropdown-row">
-            <span>N° DE ADULTOS</span>
-            <div class="counter">
-              <button onclick="updateCounter('adults', -1)">−</button>
-              <span id="adultsCount">1</span>
-              <button onclick="updateCounter('adults', 1)">+</button>
-            </div>
-          </div>
-          <div class="dropdown-row">
-            <span>N° DE NIÑOS <small>(0 a 17 Años)</small></span>
-            <div class="counter">
-              <button onclick="updateCounter('children', -1)">−</button>
-              <span id="childrenCount">0</span>
-              <button onclick="updateCounter('children', 1)">+</button>
-            </div>
-          </div>
-          <button id="applyGuests">Aplicar</button>
-        </div>
-      </div>
-    </div>
-    <button id="bookButton">Reservar</button>
-    <div id="mensajeFechas" class="mensaje-fechas d-none">
-      Por favor, seleccione las fechas de su estancia antes de continuar.
-    </div>
-  </section>
-
-  <section class="calendar-section">
-    <div id="calendarContainer"></div>
-  </section>
-
-  <!-- Modal de ingreso -->
   <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -200,25 +141,79 @@
       </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <!-- Scripts de Bootstrap necesarios para modales -->
+  <div class="page-container">
+    <div class="content-wrapper container py-4">
+      <div class="row g-4">
+        <!-- Formulario -->
+        <div class="col-lg-7">
+          <div class="card"> 
+            <div class="card-body">
+              <h2 class="text-center mb-4">Datos Personales</h2>
+              
+              <div class="form-grid">
+                <div class="mb-3">
+                  <label class="form-label required-field">Nombre</label>
+                  <input type="text" id="Nombre" class="form-control" required>
+                </div>
+                
+                <div class="mb-3">
+                  <label class="form-label required-field">Apellidos</label>
+                  <input type="text" id="Apellido" class="form-control" required>
+                </div>
+                
+                <div class="mb-3">
+                  <label class="form-label required-field">E-Mail</label>
+                  <input type="email" id="Mail" class="form-control" required>
+                </div>
+                
+                <div class="mb-3">
+                  <label class="form-label required-field">Confirma tu correo electrónico</label>
+                  <input type="email" id="Cmail" class="form-control" required>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                  <label class="form-label">Metodo de Pago</label>
+                  <select name="metodoPago" class="form-control">
+                    <option value="Efectivo" selected>Efectivo</option>
+                    <option value="Débito">Tarjeta de Débito</option>
+                    <option value="Crédito">Tarjeta de Crédito</option>
+                    <option value="Transferencia">Transferencia</option>
+                  </select>
+                  <p class="text-center required-field">Los pagos se realizan al momento de Ingresar.</p>
+              </div>
+
+              <!-- Botón alineado a la derecha -->
+              <div class="d-flex justify-content-end mt-4">
+                <button class="btn confirm-btn" id="confirmar">
+                  <i class="bi bi-check-circle me-2"></i> Confirmar Reserva
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Habitación (se llenará con JS) -->
+        <div class="col-lg-5">
+          <div id="habitacion-seleccionada"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto">
+      <div class="footer-horizontal">
+        <span>&copy; 2025 Hotel Amatista. Todos los derechos reservados.</span>
+        <span>📧 <a href="mailto:reservas@amatista.com">reservas@amatista.com</a></span>
+        <span>📞 <a href="tel:+54 9 2942 222-2222">+54 9 2942 222-2222</a></span>
+      </div>
+    </footer>
+  </div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="confirmarReserva.js"></script>
 
   <!--SweetAlert2-->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-  <script src="reserva.js"></script>
-
-  </main>
-
-  <footer class="footer">
-    <div class="footer-horizontal">
-      <span>&copy; 2025 Hotel Amatista. Todos los derechos reservados.</span>
-      <span>📧 <a href="mailto:reservas@amatista.com">reservas@amatista.com</a></span>
-      <span>📞 <a href="tel:+54 9 2942 222-2222">+54 9 2942 222-2222</a></span>
-    </div>
-  </footer>
-
-  </div>
 </body>
 </html>

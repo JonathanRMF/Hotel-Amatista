@@ -389,6 +389,160 @@ document.addEventListener("click", function (e) {
   }
 });
 
+// Función mejorada para obtener nombres de habitaciones
+function obtenerNombresHabitaciones(idsHabitaciones, catalogoHabitaciones) {
+  if (!Array.isArray(idsHabitaciones)) {
+    console.error('idsHabitaciones no es un array:', idsHabitaciones);
+    return ['Habitación no especificada'];
+  }
+
+  if (!Array.isArray(catalogoHabitaciones)) {
+    console.error('El catálogo de habitaciones no es válido');
+    return idsHabitaciones.map(id => `Habitación #${id}`);
+  }
+
+  return idsHabitaciones.map(id => {
+    // Convertir id a número por si acaso (ya que en el JSON son números)
+    const idNum = Number(id);
+    
+    // Buscar habitación (comparando como número)
+    const habitacion = catalogoHabitaciones.find(h => h.id === idNum);
+              
+    return habitacion.nombre;
+  });
+}
+
+// Obtencion de la ID
+const misReservasBtn = document.getElementById('misReservas');
+
+// Cargar datos de habitaciones
+async function cargarHabitaciones() {
+  try {
+    const response = await fetch('habitaciones.json');
+    if (!response.ok) throw new Error('Error al cargar habitaciones');
+    return await response.json();
+  } catch (error) {
+    console.error('Error:', error);
+    return [];
+  }
+}
+
+// Modificamos el event listener para usar los datos de las habitaciones
+misReservasBtn.addEventListener('click', async function() {
+  // Obtener usuario activo
+  const usuarioActivo = JSON.parse(sessionStorage.getItem('usuarioActivo'));
+  const emailUsuario = usuarioActivo.correo;
+  const habitaciones = await cargarHabitaciones();
+
+  // Obtener y filtrar reservas
+  const todasLasReservas = JSON.parse(localStorage.getItem('reservas')) || [];
+  const reservasUsuario = todasLasReservas.filter(reserva => reserva.email === emailUsuario);
+  
+  // Mostrar en el modal
+  const cardsContainer = document.getElementById('cardsContainer');
+  cardsContainer.innerHTML = '';
+  
+  if (reservasUsuario.length === 0) {
+    cardsContainer.innerHTML = '<p>No tienes reservas realizadas.</p>';
+  } else {
+    reservasUsuario.forEach((reserva, index) => {
+      const card = document.createElement('div');
+      card.className = 'col-md-6 mb-4';
+      
+      // Obtener nombres (usando la función mejorada)
+      const nombresHabitaciones = obtenerNombresHabitaciones(
+        reserva.idsHabitaciones || [],
+        habitaciones
+      );
+
+      card.innerHTML = `
+        <div class="card room-card h-100">
+          <div class="card-body">
+            <div class="mb-3">
+              <h5>Detalles de la reserva:</h5>
+              <p><strong>Fecha de reserva:</strong> ${reserva.fechaReserva}</p>
+              <p><strong>Fecha de Entrada:</strong> ${reserva.fechaInicio}</p>
+              <p><strong>Fecha de Salida:</strong> ${reserva.fechaFin}</p>
+              <p><strong>Huéspedes:</strong> ${reserva.adultos} adultos, ${reserva.niños} niños</p>
+              <p><strong>Método de pago:</strong> ${reserva.metodoPago}</p>
+            </div>
+            <h5 class="mb-2">Habitaciones reservadas:</h5>
+            <ul class="list-group">
+              ${nombresHabitaciones.map(nombre => `
+                <li class="list-group-item">${nombre}</li>
+              `).join('')}
+            </ul>
+            <div class="d-grid mt-3">
+              <button class="btn btn-danger btn-lg py-2 cancelar-btn" data-reserva-id="${reserva.id || index}">
+                <i class="bi bi-x-circle me-2"></i> Cancelar Reserva
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+      cardsContainer.appendChild(card);
+    });
+
+    // Eventos para botones de cancelar
+    document.querySelectorAll('.cancelar-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const reservaId = this.getAttribute('data-reserva-id');
+        cancelarReserva(reservaId);
+      });
+    });
+  }
+  
+  // Mostrar modal
+  new bootstrap.Modal(document.getElementById('infoModal')).show();
+});
+
+//Canselar Reserva
+async function cancelarReserva(reservaId) {
+  const { isConfirmed } = await Swal.fire({
+    title: '¿Cancelar reserva?',
+    text: "Esta acción no se puede deshacer",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#d33',
+    cancelButtonColor: '#3085d6',
+    confirmButtonText: 'Sí, cancelar',
+    cancelButtonText: 'No, mantener'
+  });
+
+  if (isConfirmed) {
+    const reservas = JSON.parse(localStorage.getItem('reservas')) || [];
+    
+    // Encontrar el índice correcto de la reserva
+    const reservaIndex = reservas.findIndex(reserva => {
+      // Si la reserva tiene ID, comparamos con él, sino usamos el índice original
+      return reserva.id ? reserva.id.toString() === reservaId.toString() : false;
+    });
+    
+    // Si no encontramos por ID, intentamos por índice numérico
+    const indexToDelete = reservaIndex !== -1 ? reservaIndex : parseInt(reservaId);
+    
+    if (indexToDelete >= 0 && indexToDelete < reservas.length) {
+      reservas.splice(indexToDelete, 1);
+      localStorage.setItem('reservas', JSON.stringify(reservas));
+      
+      // Recargar las reservas (usando el mismo código que en el click de misReservasBtn)
+      misReservasBtn.click();
+      
+      Swal.fire(
+        'Cancelada!',
+        'Tu reserva ha sido cancelada.',
+        'success'
+      );
+    } else {
+      Swal.fire(
+        'Error',
+        'No se pudo encontrar la reserva a cancelar.',
+        'error'
+      );
+    }
+  }
+}
+
 function verificarYRedirigir() {
   if (!checkInDate || !checkOutDate) {
     const mensaje = document.getElementById("mensajeFechas");

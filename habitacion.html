@@ -122,6 +122,27 @@
     </div>
   </div>
 
+  <!-- Modal Muestra Reservas -->
+  <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="infoModalLabel">Mis Reservas</h5>
+              </div>
+              <div class="modal-body">
+                  <div class="container-fluid">
+                      <div class="row" id="cardsContainer">
+                          <!-- Aquí se cargarán las cards de reservas dinámicamente -->
+                      </div>
+                  </div>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              </div>
+          </div>
+      </div>
+  </div>
+
   <div id="infoAlquiler" style="display: none"></div>
 
   <div class="contenedor">
@@ -373,11 +394,14 @@
     <div class="footer-horizontal">
       <span>&copy; 2025 Hotel Amatista. Todos los derechos reservados.</span>
       <span>📧 <a href="mailto:reservas@amatista.com">reservas@amatista.com</a></span>
-      <span>📞 <a href="tel:+5492664123456">+54 9 266 412-3456</a></span>
+      <span>📞 <a href="tel:+54 9 2942 222-2222">+54 9 2942 222-2222</a></span>
     </div>
   </footer>
 
   <script src="habitacion.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!--SweetAlert2-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

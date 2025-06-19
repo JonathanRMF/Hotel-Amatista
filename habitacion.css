@@ -284,11 +284,6 @@ body {
   width: 85%;
 }
 
-.card:hover {
-  transform: scale(1.01);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-}
-
 .card img {
   object-fit: cover;
   height: 100%;
@@ -644,6 +639,17 @@ body {
 /* Estilo para los campos válidos (si decides agregar validación positiva) */
 .is-valid {
   border-color: green !important;
+}
+
+.enlace-registro {
+  color: #a678b4;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.enlace-registro:hover {
+  text-decoration: underline;
+  color: #8c5fa1;
 }
 
 #volverALogin {

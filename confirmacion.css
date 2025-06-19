@@ -1,0 +1,92 @@
+ body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    /* Ajustes específicos para esta página */
+    .page-container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .content-wrapper {
+      flex: 1;
+    }
+    .required-field::after {
+      content: " *";
+      color: red;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .room-card {
+      border-left: 4px solid var(--amatista);
+      background-color: var(--nav-sup);
+      height: 100%;
+    }
+    .room-title {
+      color: var(--amatista-profundo);
+      border-bottom: 2px solid var(--color-hover);
+      padding-bottom: 8px;
+    }
+    .room-price {
+      font-size: 1.5rem;
+      color: var(--sb-extendido);
+    }
+    .room-feature {
+      margin-bottom: 8px;
+    }
+    .confirm-btn {
+      background-color: var(--amatista);       /* Color base del botón */
+      color: white;                            /* Texto blanco */
+      border: none;
+      padding: 0.5rem 1.2rem;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .confirm-btn:hover {
+      background-color: var(--btn-hover);      /* Hover suave */
+      color: white;
+    }
+
+    .confirm-btn:disabled {
+      background-color: var(--btn-disabled);   /* Botón inactivo */
+      color: #666;
+      cursor: not-allowed;
+    }
+
+
+
+
+    @media (max-width: 768px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+      .room-card {
+        margin-top: 2rem;
+      }
+    }
+
+/*oculta el texto del nombre en móviles*/
+@media (max-width: 768px) {
+  #btnSesion span {
+    display: none; /* Oculta el texto en móviles */
+  }
+
+  .logoUsuario {
+    width: 32px;
+    height: 32px;
+  }
+
+  #btnSesion {
+    padding: 5px;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
