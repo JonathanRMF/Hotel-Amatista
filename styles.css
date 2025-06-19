@@ -1010,7 +1010,7 @@ grid-template-columns: 1fr;
 
 /* Campos */
 #contacto .formulario-contacto .form-control {
-    background-color: #edd1ff;
+    background-color: var(--sb-principal);
     border: 1px solid #e4c8f5;
     color: var(--sb-extendido);
     border-radius: 6px;
